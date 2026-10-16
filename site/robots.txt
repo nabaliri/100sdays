@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://100daysz.com/sitemap.xml

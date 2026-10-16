@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="100Daysz logo">
+  <rect width="64" height="64" rx="16" fill="#1b4332"/>
+  <path d="M32 12c9 7 14 14.5 14 22a14 14 0 1 1-28 0c0-7.5 5-15 14-22Z" fill="#52b788"/>
+  <path d="M32 24c4.5 4.2 7 8 7 11.5A7 7 0 1 1 25 35.5c0-3.5 2.5-7.3 7-11.5Z" fill="#d8f3e4"/>
+</svg>
