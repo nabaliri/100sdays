@@ -637,25 +637,30 @@ section {
   font-size: 0.95rem;
 }
 
-/* ---------- Screenshots ---------- */
+/* ---------- Screenshots (store screenshots, 1:2 portrait) ---------- */
 
 .screenshot-row {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
 }
 
 .screenshot-card {
+  margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  max-width: 220px;
+  gap: 0.9rem;
 }
 
-.screenshot-card .phone-frame {
-  transform: none;
+.screenshot-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 2;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  background: var(--color-blue-soft);
 }
 
 .screenshot-card figcaption {
@@ -663,6 +668,24 @@ section {
   font-size: 0.9rem;
   color: var(--color-text-muted);
   text-align: center;
+}
+
+/* Tablet/phone: swipeable row instead of squeezing four images */
+@media (max-width: 860px) {
+  .screenshot-row {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    margin-inline: -1.5rem;
+    padding: 0.5rem 1.5rem 1.25rem;
+    scrollbar-width: thin;
+  }
+
+  .screenshot-card {
+    flex: 0 0 min(62vw, 240px);
+    scroll-snap-align: center;
+  }
 }
 
 /* ---------- Steps ---------- */
