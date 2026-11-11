@@ -1,24 +1,31 @@
 /* ==========================================================================
    100Daysz — shared stylesheet
-   Palette: forest green (primary), cream (background), mint (accent)
-   Supports light + dark mode via prefers-color-scheme.
+   Palette (from the app icon): royal blue (primary), amber gold (accent),
+   white / cool off-white (background).
+   --color-brand / --color-gold are fixed brand colours (same in both modes);
+   the other tokens adapt for light + dark mode via prefers-color-scheme.
    ========================================================================== */
 
 :root {
-  --color-bg: #faf7f0;
-  --color-bg-alt: #f1ece0;
+  --color-brand: #034dad;
+  --color-brand-deep: #023d8c;
+  --color-brand-bright: #0b62cf;
+  --color-gold: #f9ae24;
+  --color-gold-soft: #fff3da;
+  --color-on-brand: #ffffff;
+  --color-bg: #f6f8fc;
+  --color-bg-alt: #eaf0fa;
   --color-surface: #ffffff;
-  --color-text: #15241c;
-  --color-text-muted: #45584c;
-  --color-forest: #1b4332;
-  --color-forest-deep: #0f2e21;
-  --color-forest-light: #2d6a4f;
-  --color-mint: #52b788;
-  --color-mint-soft: #d8f3e4;
-  --color-border: #e1dcce;
-  --color-focus: #2d6a4f;
-  --shadow-soft: 0 10px 30px rgba(15, 46, 33, 0.08);
-  --shadow-card: 0 4px 16px rgba(15, 46, 33, 0.06);
+  --color-text: #0b1a33;
+  --color-text-muted: #4a5874;
+  --color-blue: #034dad;
+  --color-blue-deep: #022f6b;
+  --color-blue-light: #1463cc;
+  --color-blue-soft: #e3ecfa;
+  --color-border: #d9e2f0;
+  --color-focus: #1463cc;
+  --shadow-soft: 0 10px 30px rgba(3, 30, 80, 0.10);
+  --shadow-card: 0 4px 16px rgba(3, 30, 80, 0.06);
   --radius-lg: 24px;
   --radius-md: 16px;
   --radius-sm: 10px;
@@ -29,20 +36,19 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #0f1a15;
-    --color-bg-alt: #13201a;
-    --color-surface: #16241d;
-    --color-text: #eef4ef;
-    --color-text-muted: #aebfb3;
-    --color-forest: #6fcf9a;
-    --color-forest-deep: #eef4ef;
-    --color-forest-light: #8fdcb2;
-    --color-mint: #52b788;
-    --color-mint-soft: #1b3a2b;
-    --color-border: #24352c;
-    --color-focus: #8fdcb2;
-    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.35);
+  :root:not([data-theme="light"]) {
+    --color-bg: #07111f;
+    --color-bg-alt: #0b1829;
+    --color-surface: #0f1f35;
+    --color-text: #eef3fb;
+    --color-text-muted: #a9b8cf;
+    --color-blue: #7fb0ff;
+    --color-blue-deep: #eef3fb;
+    --color-blue-light: #8fbaff;
+    --color-blue-soft: #132b4d;
+    --color-border: #1d3150;
+    --color-focus: #8fbaff;
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.4);
     --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.3);
     color-scheme: dark;
   }
@@ -50,30 +56,36 @@
 
 /* Manual theme override hooks (optional future toggle) */
 :root[data-theme="light"] {
-  --color-bg: #faf7f0;
-  --color-bg-alt: #f1ece0;
+  --color-bg: #f6f8fc;
+  --color-bg-alt: #eaf0fa;
   --color-surface: #ffffff;
-  --color-text: #15241c;
-  --color-text-muted: #45584c;
-  --color-forest: #1b4332;
-  --color-forest-deep: #0f2e21;
-  --color-forest-light: #2d6a4f;
-  --color-mint-soft: #d8f3e4;
-  --color-border: #e1dcce;
+  --color-text: #0b1a33;
+  --color-text-muted: #4a5874;
+  --color-blue: #034dad;
+  --color-blue-deep: #022f6b;
+  --color-blue-light: #1463cc;
+  --color-blue-soft: #e3ecfa;
+  --color-border: #d9e2f0;
+  --color-focus: #1463cc;
+  --shadow-soft: 0 10px 30px rgba(3, 30, 80, 0.10);
+  --shadow-card: 0 4px 16px rgba(3, 30, 80, 0.06);
   color-scheme: light;
 }
 
 :root[data-theme="dark"] {
-  --color-bg: #0f1a15;
-  --color-bg-alt: #13201a;
-  --color-surface: #16241d;
-  --color-text: #eef4ef;
-  --color-text-muted: #aebfb3;
-  --color-forest: #6fcf9a;
-  --color-forest-deep: #eef4ef;
-  --color-forest-light: #8fdcb2;
-  --color-mint-soft: #1b3a2b;
-  --color-border: #24352c;
+  --color-bg: #07111f;
+  --color-bg-alt: #0b1829;
+  --color-surface: #0f1f35;
+  --color-text: #eef3fb;
+  --color-text-muted: #a9b8cf;
+  --color-blue: #7fb0ff;
+  --color-blue-deep: #eef3fb;
+  --color-blue-light: #8fbaff;
+  --color-blue-soft: #132b4d;
+  --color-border: #1d3150;
+  --color-focus: #8fbaff;
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.4);
+  --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.3);
   color-scheme: dark;
 }
 
@@ -104,13 +116,13 @@ svg {
 }
 
 a {
-  color: var(--color-forest-light);
+  color: var(--color-blue-light);
   text-decoration-thickness: 1.5px;
   text-underline-offset: 2px;
 }
 
 a:hover {
-  color: var(--color-mint);
+  color: var(--color-blue-deep);
 }
 
 :focus-visible {
@@ -168,8 +180,8 @@ p {
   position: absolute;
   left: 1rem;
   top: -3rem;
-  background: var(--color-forest);
-  color: #fff;
+  background: var(--color-brand);
+  color: var(--color-on-brand);
   padding: 0.6rem 1rem;
   border-radius: var(--radius-sm);
   z-index: 1000;
@@ -210,7 +222,7 @@ p {
 }
 
 .brand:hover {
-  color: var(--color-forest-light);
+  color: var(--color-blue-light);
 }
 
 .brand .logo-mark {
@@ -237,7 +249,7 @@ p {
 
 .nav-links a:hover,
 .nav-links a[aria-current="page"] {
-  color: var(--color-forest-light);
+  color: var(--color-blue-light);
 }
 
 .nav-toggle {
@@ -305,13 +317,13 @@ p {
 }
 
 .btn-primary {
-  background: var(--color-forest);
-  color: #fdfdf9;
+  background: var(--color-brand);
+  color: var(--color-on-brand);
 }
 
 .btn-primary:hover {
-  background: var(--color-forest-light);
-  color: #fdfdf9;
+  background: var(--color-brand-bright);
+  color: var(--color-on-brand);
   box-shadow: var(--shadow-card);
 }
 
@@ -322,8 +334,8 @@ p {
 }
 
 .btn-outline:hover {
-  border-color: var(--color-forest-light);
-  color: var(--color-forest-light);
+  border-color: var(--color-blue-light);
+  color: var(--color-blue-light);
 }
 
 /* ---------- Store badges ---------- */
@@ -379,13 +391,31 @@ p {
 }
 
 .store-badge:not([aria-disabled="true"]):hover {
-  border-color: var(--color-forest-light);
+  border-color: var(--color-blue-light);
 }
 
-/* ---------- Hero ---------- */
+/* ---------- Hero (royal-blue band, mirrors the store feature graphic) ---------- */
 
 .hero {
-  padding-block: clamp(3rem, 7vw, 6rem) clamp(2.5rem, 5vw, 4rem);
+  position: relative;
+  overflow: hidden;
+  color: var(--color-on-brand);
+  background:
+    radial-gradient(60% 80% at 28% 45%, rgba(40, 120, 230, 0.55), transparent 70%),
+    linear-gradient(160deg, var(--color-brand-bright) 0%, var(--color-brand) 45%, var(--color-brand-deep) 100%);
+  padding-block: clamp(3rem, 7vw, 6rem) clamp(3rem, 6vw, 5rem);
+}
+
+.hero h1 {
+  color: var(--color-on-brand);
+}
+
+.hero .hero-lede {
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.hero .note {
+  color: rgba(255, 255, 255, 0.72);
 }
 
 .hero-grid {
@@ -405,14 +435,19 @@ p {
   .hero-eyebrow {
     justify-content: center;
   }
+
+  .hero-visual {
+    order: -1;
+  }
 }
 
 .hero-eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: var(--color-mint-soft);
-  color: var(--color-forest-deep);
+  background: rgba(249, 174, 36, 0.16);
+  border: 1px solid rgba(249, 174, 36, 0.45);
+  color: var(--color-gold);
   font-weight: 700;
   font-size: 0.8rem;
   letter-spacing: 0.04em;
@@ -420,6 +455,11 @@ p {
   padding: 0.4rem 0.9rem;
   border-radius: 999px;
   margin-bottom: 1.25rem;
+}
+
+.hero-eyebrow svg {
+  width: 14px;
+  height: 14px;
 }
 
 .hero-lede {
@@ -434,10 +474,55 @@ p {
   }
 }
 
+.hero .store-badge {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: var(--color-on-brand);
+}
+
+.hero .store-badge .badge-text .small {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.hero .store-badge[aria-disabled="true"] {
+  opacity: 0.85;
+}
+
+/* Live store link: solid white so it stands out from "coming soon" badges */
+.hero .store-badge.is-live {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: var(--color-brand);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.hero .store-badge.is-live .badge-text .small {
+  color: var(--color-brand);
+  opacity: 0.75;
+}
+
+.hero .store-badge.is-live:hover {
+  color: var(--color-brand-deep);
+  border-color: var(--color-gold);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(1, 25, 70, 0.3);
+}
+
 .hero-visual {
   display: flex;
   justify-content: center;
-  gap: 1.25rem;
+}
+
+.hero-visual .hero-mark {
+  width: min(400px, 100%);
+  height: auto;
+  filter: drop-shadow(0 20px 40px rgba(1, 25, 70, 0.35));
+}
+
+@media (max-width: 860px) {
+  .hero-visual .hero-mark {
+    width: min(200px, 56vw);
+  }
 }
 
 /* ---------- Phone frame ---------- */
@@ -446,7 +531,7 @@ p {
   width: 220px;
   aspect-ratio: 9 / 19.5;
   border-radius: 34px;
-  border: 10px solid var(--color-forest-deep);
+  border: 10px solid var(--color-blue-deep);
   background: var(--color-surface);
   box-shadow: var(--shadow-soft);
   position: relative;
@@ -462,7 +547,7 @@ p {
   translate: -50% 0;
   width: 44%;
   height: 20px;
-  background: var(--color-forest-deep);
+  background: var(--color-blue-deep);
   border-radius: 0 0 14px 14px;
   z-index: 2;
 }
@@ -482,12 +567,6 @@ p {
 
 .phone-frame.is-tertiary {
   transform: translateY(2.75rem) scale(0.85);
-}
-
-@media (max-width: 560px) {
-  .hero-visual {
-    display: none;
-  }
 }
 
 /* ---------- Sections ---------- */
@@ -512,7 +591,7 @@ section {
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--color-forest-light);
+  color: var(--color-blue-light);
   margin-bottom: 0.6rem;
 }
 
@@ -536,7 +615,7 @@ section {
   width: 52px;
   height: 52px;
   border-radius: var(--radius-sm);
-  background: var(--color-mint-soft);
+  background: var(--color-blue-soft);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -546,7 +625,7 @@ section {
 .feature-card .icon-wrap svg {
   width: 28px;
   height: 28px;
-  color: var(--color-forest);
+  color: var(--color-blue);
 }
 
 .feature-card h3 {
@@ -615,8 +694,9 @@ section {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: var(--color-forest);
-  color: #fdfdf9;
+  background: var(--color-brand);
+  color: var(--color-on-brand);
+  box-shadow: 0 0 0 3px var(--color-gold);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -662,7 +742,7 @@ section {
   content: "+";
   font-size: 1.4rem;
   font-weight: 400;
-  color: var(--color-forest-light);
+  color: var(--color-blue-light);
   flex-shrink: 0;
   transition: transform 0.15s ease;
 }
@@ -685,8 +765,8 @@ section {
 
 .page-hero .updated-badge {
   display: inline-block;
-  background: var(--color-mint-soft);
-  color: var(--color-forest-deep);
+  background: var(--color-blue-soft);
+  color: var(--color-blue-deep);
   font-size: 0.82rem;
   font-weight: 700;
   padding: 0.35rem 0.8rem;
@@ -742,7 +822,7 @@ section {
 }
 
 .legal-toc a:hover {
-  color: var(--color-forest-light);
+  color: var(--color-blue-light);
 }
 
 .legal-body section {
@@ -788,7 +868,7 @@ section {
 }
 
 .callout {
-  background: var(--color-mint-soft);
+  background: var(--color-blue-soft);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   padding: 1.25rem 1.5rem;
@@ -796,25 +876,25 @@ section {
 }
 
 .callout p {
-  color: var(--color-forest-deep);
+  color: var(--color-blue-deep);
   margin: 0;
 }
 
 .callout.warning {
-  background: #fff4e5;
-  border-color: #f2d7a8;
+  background: var(--color-gold-soft);
+  border-color: #f3cf86;
 }
 
 @media (prefers-color-scheme: dark) {
-  .callout.warning {
-    background: #3a2a12;
-    border-color: #5c4420;
+  :root:not([data-theme="light"]) .callout.warning {
+    background: #33260d;
+    border-color: #6b4e14;
   }
 }
 
 :root[data-theme="dark"] .callout.warning {
-  background: #3a2a12;
-  border-color: #5c4420;
+  background: #33260d;
+  border-color: #6b4e14;
 }
 
 /* ---------- Support / troubleshooting ---------- */
@@ -875,22 +955,24 @@ section {
 
 .ordered-steps li {
   counter-increment: ostep;
-  display: flex;
-  gap: 1rem;
+  position: relative;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  padding: 1.1rem 1.25rem;
+  padding: 1.1rem 1.25rem 1.1rem 3.75rem;
 }
 
 .ordered-steps li::before {
   content: counter(ostep);
-  flex-shrink: 0;
+  position: absolute;
+  left: 1.1rem;
+  top: 1.05rem;
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: var(--color-forest);
-  color: #fdfdf9;
+  background: var(--color-brand);
+  color: var(--color-on-brand);
+  box-shadow: 0 0 0 3px var(--color-gold);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -943,7 +1025,7 @@ section {
 }
 
 .footer-grid a:hover {
-  color: var(--color-forest-light);
+  color: var(--color-blue-light);
 }
 
 .footer-brand {

@@ -13,12 +13,18 @@
 <meta property="og:description" content="A calm, offline-first 100-day challenge and habit tracker with guided workouts, narrated breathing sessions, and a friendly 3D guide." />
 <meta property="og:url" content="https://100daysz.com/" />
 <meta property="og:site_name" content="100Daysz" />
-<!-- TODO: add og:image pointing to a 1200x630 social preview image once designed, e.g. https://100daysz.com/og-image.png -->
+<meta property="og:image" content="https://100daysz.com/images/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="100Daysz — Build habits that stick, 100 days at a time" />
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://100daysz.com/images/og-image.png" />
 <meta name="twitter:title" content="100Daysz — Build Habits That Stick, One Day at a Time" />
 <meta name="twitter:description" content="A calm, offline-first 100-day challenge and habit tracker with guided workouts, narrated breathing sessions, and a friendly 3D guide." />
 
 <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+<meta name="theme-color" content="#034dad" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
@@ -30,11 +36,7 @@
 <header class="site-header">
   <nav class="nav-bar container" aria-label="Primary">
     <a class="brand" href="index.html">
-      <svg class="logo-mark" viewBox="0 0 64 64" role="img" aria-label="">
-        <rect width="64" height="64" rx="16" fill="#1b4332"/>
-        <path d="M32 12c9 7 14 14.5 14 22a14 14 0 1 1-28 0c0-7.5 5-15 14-22Z" fill="#52b788"/>
-        <path d="M32 24c4.5 4.2 7 8 7 11.5A7 7 0 1 1 25 35.5c0-3.5 2.5-7.3 7-11.5Z" fill="#d8f3e4"/>
-      </svg>
+      <svg class="logo-mark" aria-hidden="true" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#034dad"/><g transform="translate(32 32) scale(0.95)"><g fill="#ffffff"><path d="M0 0C13 -8 11 -19 0 -29C-11 -19 -13 -8 0 0Z" transform="rotate(0)"/><path d="M0 0C13 -8 11 -19 0 -29C-11 -19 -13 -8 0 0Z" transform="rotate(45)"/><path d="M0 0C13 -8 11 -19 0 -29C-11 -19 -13 -8 0 0Z" transform="rotate(90)"/><path d="M0 0C13 -8 11 -19 0 -29C-11 -19 -13 -8 0 0Z" transform="rotate(135)"/><path d="M0 0C13 -8 11 -19 0 -29C-11 -19 -13 -8 0 0Z" transform="rotate(180)"/><path d="M0 0C13 -8 11 -19 0 -29C-11 -19 -13 -8 0 0Z" transform="rotate(225)"/><path d="M0 0C13 -8 11 -19 0 -29C-11 -19 -13 -8 0 0Z" transform="rotate(270)"/><path d="M0 0C13 -8 11 -19 0 -29C-11 -19 -13 -8 0 0Z" transform="rotate(315)"/></g><g fill="#f9ae24"><path d="M0 -16Q1.6 0 0 16Q-1.6 0 0 -16Z"/><path d="M0 -16Q1.6 0 0 16Q-1.6 0 0 -16Z" transform="rotate(90) scale(0.9)"/><path d="M0 -12Q1.3 0 0 12Q-1.3 0 0 -12Z" transform="rotate(45)"/><path d="M0 -12Q1.3 0 0 12Q-1.3 0 0 -12Z" transform="rotate(-45)"/></g></g></svg>
       100Daysz
     </a>
     <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" id="navToggle" aria-label="Toggle navigation menu">
@@ -55,7 +57,7 @@
   <section class="hero">
     <div class="container hero-grid">
       <div>
-        <span class="hero-eyebrow">100-day challenges, made calm</span>
+        <span class="hero-eyebrow"><svg viewBox="-10 -10 20 20" fill="currentColor" aria-hidden="true"><path d="M0 -10C1 -2 2 -1 10 0C2 1 1 2 0 10C-1 2 -2 1 -10 0C-2 -1 -1 -2 0 -10Z"/></svg>100-day challenges, made calm</span>
         <h1>Build habits that stick, one day at a time.</h1>
         <p class="hero-lede">100Daysz turns any goal into a guided 100-day challenge — with streak tracking, gentle reminders, narrated breathing sessions, and guided workout circuits. Everything runs offline-first, right on your phone.</p>
 
@@ -69,45 +71,34 @@
           </span>
           <!-- Official Google Play "Get it on Google Play" badge:
                https://play.google.com/intl/en_us/badges/
-               Replace this placeholder with the official SVG/PNG badge once the app is live. -->
-          <span class="store-badge" aria-disabled="true" role="img" aria-label="Coming soon to Google Play">
+               The app is live on Google Play; this link goes to the listing.
+               Optionally swap this styled badge for the official badge artwork. -->
+          <a class="store-badge is-live" href="https://play.google.com/store/apps/details?id=com.hundreddaysz.challenge" target="_blank" rel="noopener" aria-label="Get 100Daysz on Google Play">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 2.6c-.4.2-.6.6-.6 1.1v16.6c0 .5.2.9.6 1.1l9.4-9.4-9.4-9.4Zm11.1 9.4 2.5-2.5 4.2 2.4c.6.4.6 1.2 0 1.6l-4.2 2.4-2.5-2.5Zm-1-1L4.3 1.6l10.8 6.3-1.4 1.4Zm0 2 1.4 1.4L4.3 22.4l9.4-9.4Z"/></svg>
-            <span class="badge-text"><span class="small">Coming soon on</span><span class="big">Google Play</span></span>
-          </span>
+            <span class="badge-text"><span class="small">Get it on</span><span class="big">Google Play</span></span>
+          </a>
         </div>
-        <p class="note" style="margin-top:0.9rem;">100Daysz is in final testing and launching soon on both platforms.</p>
+        <p class="note" style="margin-top:0.9rem;">Available now on Android. Coming soon to iPhone.</p>
       </div>
 
-      <div class="hero-visual" aria-hidden="true">
-        <div class="phone-frame is-tertiary">
-          <div class="phone-screen">
-            <svg viewBox="0 0 160 300" width="100%" height="100%">
-              <rect width="160" height="300" fill="#d8f3e4"/>
-              <circle cx="80" cy="120" r="46" fill="#52b788"/>
-              <text x="80" y="128" font-family="sans-serif" font-size="28" fill="#0f2e21" text-anchor="middle">62</text>
-            </svg>
-          </div>
-        </div>
-        <div class="phone-frame is-secondary">
-          <div class="phone-screen">
-            <svg viewBox="0 0 160 300" width="100%" height="100%">
-              <rect width="160" height="300" fill="#f1ece0"/>
-              <rect x="16" y="40" width="128" height="18" rx="9" fill="#1b4332"/>
-              <rect x="16" y="70" width="90" height="10" rx="5" fill="#2d6a4f"/>
-              <rect x="16" y="120" width="128" height="60" rx="12" fill="#ffffff" stroke="#e1dcce"/>
-              <rect x="16" y="190" width="128" height="60" rx="12" fill="#ffffff" stroke="#e1dcce"/>
-            </svg>
-          </div>
-        </div>
-        <div class="phone-frame">
-          <div class="phone-screen">
-            <svg viewBox="0 0 160 300" width="100%" height="100%">
-              <rect width="160" height="300" fill="#ffffff"/>
-              <path d="M30 220c20-50 30-100 50-130 20 30 30 80 50 130" fill="none" stroke="#52b788" stroke-width="8" stroke-linecap="round"/>
-              <circle cx="80" cy="80" r="18" fill="#1b4332"/>
-            </svg>
-          </div>
-        </div>
+      <div class="hero-visual">
+        <svg class="hero-mark" viewBox="0 0 440 440" role="img" aria-label="100Daysz flower logo inside a progress ring">
+          <defs>
+            <radialGradient id="heroGlow" cx="50%" cy="45%" r="55%">
+              <stop offset="0" stop-color="#2a7be0"/>
+              <stop offset="1" stop-color="#034dad"/>
+            </radialGradient>
+          </defs>
+          <circle cx="220" cy="220" r="176" fill="url(#heroGlow)"/>
+          <circle cx="220" cy="220" r="190" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="10"/>
+          <path d="M220 30A190 190 0 1 0 384.5 125" fill="none" stroke="#f9ae24" stroke-width="10" stroke-linecap="round"/>
+          <g transform="translate(220 220) scale(4.6) translate(-32 -32)"><g transform="translate(32 32)"><g fill="#ffffff"><path d="M0 0C13 -8 11 -19 0 -29C-11 -19 -13 -8 0 0Z" transform="rotate(0)"/><path d="M0 0C13 -8 11 -19 0 -29C-11 -19 -13 -8 0 0Z" transform="rotate(45)"/><path d="M0 0C13 -8 11 -19 0 -29C-11 -19 -13 -8 0 0Z" transform="rotate(90)"/><path d="M0 0C13 -8 11 -19 0 -29C-11 -19 -13 -8 0 0Z" transform="rotate(135)"/><path d="M0 0C13 -8 11 -19 0 -29C-11 -19 -13 -8 0 0Z" transform="rotate(180)"/><path d="M0 0C13 -8 11 -19 0 -29C-11 -19 -13 -8 0 0Z" transform="rotate(225)"/><path d="M0 0C13 -8 11 -19 0 -29C-11 -19 -13 -8 0 0Z" transform="rotate(270)"/><path d="M0 0C13 -8 11 -19 0 -29C-11 -19 -13 -8 0 0Z" transform="rotate(315)"/></g><g fill="#f9ae24"><path d="M0 -16Q1.6 0 0 16Q-1.6 0 0 -16Z"/><path d="M0 -16Q1.6 0 0 16Q-1.6 0 0 -16Z" transform="rotate(90) scale(0.9)"/><path d="M0 -12Q1.3 0 0 12Q-1.3 0 0 -12Z" transform="rotate(45)"/><path d="M0 -12Q1.3 0 0 12Q-1.3 0 0 -12Z" transform="rotate(-45)"/></g></g></g>
+          <g fill="#f9ae24">
+            <path d="M0 -10C1 -2 2 -1 10 0C2 1 1 2 0 10C-1 2 -2 1 -10 0C-2 -1 -1 -2 0 -10Z" transform="translate(404 52) scale(0.9)"/>
+            <path d="M0 -10C1 -2 2 -1 10 0C2 1 1 2 0 10C-1 2 -2 1 -10 0C-2 -1 -1 -2 0 -10Z" transform="translate(28 330) scale(0.7)"/>
+            <path d="M0 -10C1 -2 2 -1 10 0C2 1 1 2 0 10C-1 2 -2 1 -10 0C-2 -1 -1 -2 0 -10Z" transform="translate(410 380) scale(0.6)"/>
+          </g>
+        </svg>
       </div>
     </div>
   </section>
@@ -177,10 +168,10 @@
           <div class="phone-frame">
             <div class="phone-screen">
               <svg viewBox="0 0 160 300" width="100%" height="100%" role="img" aria-label="Screenshot placeholder: today's challenge screen">
-                <rect width="160" height="300" fill="#f1ece0"/>
-                <rect x="16" y="30" width="110" height="14" rx="7" fill="#1b4332"/>
-                <circle cx="80" cy="130" r="48" fill="#52b788"/>
-                <rect x="30" y="210" width="100" height="36" rx="10" fill="#ffffff" stroke="#e1dcce"/>
+                <rect width="160" height="300" fill="#eaf0fa"/>
+                <rect x="16" y="30" width="110" height="14" rx="7" fill="#034dad"/>
+                <circle cx="80" cy="130" r="48" fill="#f9ae24"/>
+                <rect x="30" y="210" width="100" height="36" rx="10" fill="#ffffff" stroke="#d9e2f0"/>
               </svg>
             </div>
           </div>
@@ -191,10 +182,10 @@
             <div class="phone-screen">
               <svg viewBox="0 0 160 300" width="100%" height="100%" role="img" aria-label="Screenshot placeholder: guided workout circuit">
                 <rect width="160" height="300" fill="#ffffff"/>
-                <circle cx="80" cy="90" r="30" fill="#1b4332"/>
-                <rect x="24" y="150" width="112" height="16" rx="8" fill="#d8f3e4"/>
-                <rect x="24" y="178" width="80" height="16" rx="8" fill="#d8f3e4"/>
-                <rect x="24" y="206" width="96" height="16" rx="8" fill="#d8f3e4"/>
+                <circle cx="80" cy="90" r="30" fill="#034dad"/>
+                <rect x="24" y="150" width="112" height="16" rx="8" fill="#e3ecfa"/>
+                <rect x="24" y="178" width="80" height="16" rx="8" fill="#e3ecfa"/>
+                <rect x="24" y="206" width="96" height="16" rx="8" fill="#e3ecfa"/>
               </svg>
             </div>
           </div>
@@ -204,9 +195,9 @@
           <div class="phone-frame">
             <div class="phone-screen">
               <svg viewBox="0 0 160 300" width="100%" height="100%" role="img" aria-label="Screenshot placeholder: breathing session with 3D guide">
-                <rect width="160" height="300" fill="#0f2e21"/>
-                <circle cx="80" cy="140" r="54" fill="#52b788" opacity="0.5"/>
-                <circle cx="80" cy="140" r="34" fill="#d8f3e4"/>
+                <rect width="160" height="300" fill="#022f6b"/>
+                <circle cx="80" cy="140" r="54" fill="#f9ae24" opacity="0.5"/>
+                <circle cx="80" cy="140" r="34" fill="#e3ecfa"/>
               </svg>
             </div>
           </div>
@@ -260,7 +251,7 @@
         </details>
         <details class="faq-item">
           <summary>What devices does it support?</summary>
-          <p class="faq-answer">100Daysz is built with Flutter for iPhone (App Store) and Android (Google Play). Both are launching soon — see the badges above.</p>
+          <p class="faq-answer">100Daysz is built with Flutter for iPhone (App Store) and Android (Google Play). The Android app is <a href="https://play.google.com/store/apps/details?id=com.hundreddaysz.challenge" target="_blank" rel="noopener">available now on Google Play</a>, and the iPhone app is coming soon to the App Store.</p>
         </details>
         <details class="faq-item">
           <summary>How do I delete my account and data?</summary>
@@ -277,7 +268,7 @@
     <div class="footer-grid">
       <div>
         <a class="footer-brand" href="index.html">
-          <svg class="logo-mark" width="28" height="28" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#1b4332"/><path d="M32 12c9 7 14 14.5 14 22a14 14 0 1 1-28 0c0-7.5 5-15 14-22Z" fill="#52b788"/></svg>
+          <svg class="logo-mark" width="28" height="28" aria-hidden="true" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#034dad"/><g transform="translate(32 32) scale(0.95)"><g fill="#ffffff"><path d="M0 0C13 -8 11 -19 0 -29C-11 -19 -13 -8 0 0Z" transform="rotate(0)"/><path d="M0 0C13 -8 11 -19 0 -29C-11 -19 -13 -8 0 0Z" transform="rotate(45)"/><path d="M0 0C13 -8 11 -19 0 -29C-11 -19 -13 -8 0 0Z" transform="rotate(90)"/><path d="M0 0C13 -8 11 -19 0 -29C-11 -19 -13 -8 0 0Z" transform="rotate(135)"/><path d="M0 0C13 -8 11 -19 0 -29C-11 -19 -13 -8 0 0Z" transform="rotate(180)"/><path d="M0 0C13 -8 11 -19 0 -29C-11 -19 -13 -8 0 0Z" transform="rotate(225)"/><path d="M0 0C13 -8 11 -19 0 -29C-11 -19 -13 -8 0 0Z" transform="rotate(270)"/><path d="M0 0C13 -8 11 -19 0 -29C-11 -19 -13 -8 0 0Z" transform="rotate(315)"/></g><g fill="#f9ae24"><path d="M0 -16Q1.6 0 0 16Q-1.6 0 0 -16Z"/><path d="M0 -16Q1.6 0 0 16Q-1.6 0 0 -16Z" transform="rotate(90) scale(0.9)"/><path d="M0 -12Q1.3 0 0 12Q-1.3 0 0 -12Z" transform="rotate(45)"/><path d="M0 -12Q1.3 0 0 12Q-1.3 0 0 -12Z" transform="rotate(-45)"/></g></g></svg>
           100Daysz
         </a>
         <p class="footer-tagline">A calm, offline-first 100-day challenge and habit tracker, built by 100Daysz LLC.</p>

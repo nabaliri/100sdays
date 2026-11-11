@@ -12,8 +12,9 @@ app name; **100Daysz** is the brand/legal spelling used consistently across the
 whole site and all legal documents — do not switch to "100sDays" anywhere).
 
 - **App**: Flutter habit/100-day-challenge tracker for iPhone (App Store) and
-  Android (Google Play). Both platforms are **"coming soon"** — not yet published
-  as of this handoff.
+  Android (Google Play). **Android is live** on Google Play
+  (https://play.google.com/store/apps/details?id=com.hundreddaysz.challenge,
+  package `com.hundreddaysz.challenge`); **iPhone is still "coming soon"**.
 - **Core features**: daily challenge/streak tracking, offline-first local storage,
   local reminder notifications, guided workout circuits, narrated breathing
   sessions, a 3D guide character.
@@ -78,10 +79,21 @@ published alongside the rendered HTML).
 
 ## Design system (match this exactly for any new content)
 
-- **Palette**: forest green primary, cream background, mint accent. CSS custom
-  properties in `styles.css` (`--color-forest`, `--color-bg`, `--color-mint`,
-  etc.), with a full dark-mode variant via `prefers-color-scheme` plus manual
-  `[data-theme="dark"]` / `[data-theme="light"]` overrides.
+- **Palette** (taken from the app icon / store feature graphic): royal blue
+  `#034DAD` primary, amber gold `#F9AE24` accent, white / cool off-white
+  background. CSS custom properties in `styles.css`: fixed brand colours
+  `--color-brand`, `--color-gold` (same in light and dark), plus adaptive tokens
+  `--color-blue`, `--color-blue-light`, `--color-blue-deep`, `--color-blue-soft`,
+  `--color-bg`, etc. Full dark-mode variant via `prefers-color-scheme` plus
+  manual `[data-theme="dark"]` / `[data-theme="light"]` overrides. Don't use gold
+  for body text or links on light backgrounds (contrast too low); it's for
+  decorative accents (hero ring, sparkles, step-number rings).
+- **Logo**: inline SVG flower mark (8 white petals + gold 8-ray star on a
+  royal-blue rounded square), same as `favicon.svg`, in every header and
+  footer. Raster versions in `images/` (`app-icon.png`, `apple-touch-icon.png`,
+  `og-image.png` = 1200×630 social preview from the feature graphic).
+- **Home hero**: royal-blue gradient band with the flower inside a gold
+  progress ring, mirroring the store feature graphic.
 - **Font**: Plus Jakarta Sans (Google Fonts), system sans-serif fallback.
 - **Every page** has the same header (`<header class="site-header">` with logo
   SVG + nav links + mobile hamburger) and footer (`<footer class="site-footer">`
@@ -101,10 +113,10 @@ published alongside the rendered HTML).
 - **Support/delete-account pages** additionally use `.contact-card` (email CTA
   box), `.troubleshoot-card` (icon + numbered `<ol>` fix steps), and
   `.ordered-steps` (circular-numbered step list, used in `delete-account.html`).
-- Store badges on `index.html` are **placeholder inline SVGs** styled as
-  "Coming soon" (not clickable) — there are HTML comments right above them
-  linking to the official Apple/Google badge-asset pages, to be swapped in once
-  the app is actually live.
+- Store badges on `index.html`: the **Google Play badge is a live link** to the
+  listing (solid white `.store-badge.is-live`); the **App Store badge is still a
+  "Coming soon" placeholder** (not clickable). HTML comments above them link to
+  the official Apple/Google badge-asset pages if you want the official artwork.
 
 ## Content additions beyond the original source PDFs (flag for legal review)
 
@@ -133,8 +145,8 @@ drafted the original PDFs / counsel before relying on them:
 2. **`delete-account.html`**: the **30-day deletion timeframe** is a placeholder
    — confirm against the real backend process, and make sure the same number is
    used in Google Play's Data Safety form.
-3. **`index.html`**: no Open Graph social-preview image yet (`og:image` tag is
-   commented out with a TODO) — needs a real 1200×630 image.
+3. **`og:image`** (all pages) points at `https://100daysz.com/images/og-image.png`,
+   so link previews only work once the domain is migrated to GitHub Pages.
 4. **`privacy.html` §14/§32**: analytics/crash-reporting SDK language is
    deliberately vague ("specific providers may change") — if Firebase, Sentry,
    etc. are actually integrated, name them explicitly here **and** make sure
@@ -144,9 +156,9 @@ drafted the original PDFs / counsel before relying on them:
 5. **`privacy.html` §23 table**: Geolocation row says "only if a feature
    specifically requires it" — confirm the app doesn't currently request
    location; update if it does.
-6. **Store badges on `index.html`**: swap placeholder SVGs for the official
-   Apple/Google badge assets once each store listing is actually live, and
-   update the href/URLs.
+6. **App Store badge on `index.html`**: turn it into a live link (copy the
+   Google Play badge's `<a class="store-badge is-live">` pattern) once the iPhone
+   listing is live, and update the FAQ answer "What devices does it support?".
 
 ## DNS / custom domain status (important — read before touching DNS or CNAME)
 
